@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "weekpicker": {
+      "projectType": "library",
+      "root": "projects/weekpicker",
+      "sourceRoot": "projects/weekpicker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/weekpicker/tsconfig.lib.json",
+            "project": "projects/weekpicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/weekpicker/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/weekpicker/src/test.ts",
+            "tsConfig": "projects/weekpicker/tsconfig.spec.json",
+            "karmaConfig": "projects/weekpicker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/weekpicker/tsconfig.lib.json",
+              "projects/weekpicker/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "weekpicker"
 }

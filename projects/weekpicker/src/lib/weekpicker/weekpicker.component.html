@@ -1,0 +1,17 @@
+<mat-date-range-picker #picker disabled="false">
+  <mat-date-range-picker-actions>
+    <span [ngStyle]="{ 'margin-left.px': 8, color: 'gray' }">{{
+      previewDate | isoWeek
+    }}</span>
+    <span class="spacer" [ngStyle]="{ flex: '1 1 auto' }"></span>
+    <button mat-button matDateRangePickerCancel>Cancel</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!(selected$ | async)"
+      matDateRangePickerApply
+    >
+      Apply
+    </button>
+  </mat-date-range-picker-actions>
+</mat-date-range-picker>
