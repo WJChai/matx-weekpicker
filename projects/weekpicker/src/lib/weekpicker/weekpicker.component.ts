@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import {
   MAT_MOMENT_DATE_FORMATS,
   MomentDateAdapter,
@@ -15,14 +9,9 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import {
-  DateRange,
   MatDateRangePicker,
   MAT_DATE_RANGE_SELECTION_STRATEGY,
 } from '@angular/material/datepicker';
-import {
-  MatDatepickerControl,
-  MatDatepickerPanel,
-} from '@angular/material/datepicker/datepicker-base';
 import { Moment } from 'moment';
 import { animationFrameScheduler, EMPTY, Observable } from 'rxjs';
 import { map, observeOn } from 'rxjs/operators';
